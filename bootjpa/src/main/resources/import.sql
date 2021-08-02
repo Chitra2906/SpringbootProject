@@ -1,0 +1,1 @@
+insert into user values (104,'Amit');
