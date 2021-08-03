@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<legend>Add a new user</legend>
 	<form action="addUser">
 	Please enter userid : <input type="text" name="userid"><br>
 	<br>
@@ -14,5 +15,28 @@
 	<br>
 	<input type="submit"><br>
 	</form>
+	
+	<br>
+	<br>
+	<br>
+	
+	<legend>Search by userid</legend>
+	<form action="showUser">
+	Enter userid : <input type="text" name="userid"><br>
+	<br>
+	<br>
+	<input type="submit"><br>
+	</form>
+	<br>
+	<br>
+	<legend>Delete by userid</legend>
+	<form action="deleteUser">
+	Enter userid : <input type="text" name="userid"><br>
+	<br>
+	<br>
+	<input type="submit"><br>
+	</form>
+	
+	
 </body>
 </html>

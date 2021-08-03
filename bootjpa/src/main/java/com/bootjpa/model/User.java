@@ -1,4 +1,4 @@
-package com.example.bootjpa.model;
+package com.bootjpa.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
