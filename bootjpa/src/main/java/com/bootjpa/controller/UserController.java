@@ -1,25 +1,17 @@
 package com.bootjpa.controller;
-
-import java.util.Optional;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.ModelAndView;
-
 import com.bootjpa.dao.UserRepo;
 import com.bootjpa.model.User;
 import com.fasterxml.jackson.databind.util.JSONPObject;
 
 
-@Controller
-
+@RestController
 public class UserController {
 	
 	private final Logger logger =LoggerFactory.getLogger(this.getClass());
@@ -30,15 +22,16 @@ public class UserController {
 	@RequestMapping("/")
 	public String home() {
 		logger.info("Page loaded successfully");
-		return "home.jsp";
+		return "Hello User";
 		
 	}
-	
+
+// How to test -->http://localhost:8080/addUser?userid=101&name=Priya
 	@RequestMapping("/addUser")
 	public String addUser(User user) {
 		repo.save(user);
 		logger.info( user + " was added in the Table User");
-		return "home.jsp";
+		return user + " was added in the Table User";
 	}
 	
 //	@RequestMapping("/showUser")
@@ -52,7 +45,7 @@ public class UserController {
 //	}
 	
 	
-	
+// How to test ? --->	http://localhost:8080/showUser?userid=11
 	@RequestMapping("/showUser")
 	@ResponseBody
 	public   JSONPObject showUser(@RequestParam int userid) {
@@ -70,20 +63,22 @@ public class UserController {
 	}
 	
 	
-	
+//How to test ? --> http://localhost:8080/deleteUser?userid=101
 	@RequestMapping("/deleteUser")
 	public String deleteUser(@RequestParam int userid) {
 		boolean userexists= repo.existsById(userid);
 		if(userexists) {
 		repo.deleteById(userid);
 		logger.info("User with userid " +userid + " was deleted from Table User");
+		return ("User with userid " +userid + " was deleted from Table User");
 		}
 		
 		else{
 		logger.error("No such user exists with userid " + userid);
+		return("No such user exists with userid " + userid);
 		}
 		
-		return "home.jsp";
+		
 		
 	}
 	
