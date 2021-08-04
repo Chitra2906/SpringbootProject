@@ -1,0 +1,37 @@
+2021-08-04 18:46:57.832  INFO 8376 --- [main] com.bootjpa.BootjpaApplication           : Starting BootjpaApplication using Java 15.0.1 on DESKTOP-6BQ3DCL with PID 8376 (G:\Spring workspace 4.9\repo_bootjpa\bootjpa\target\classes started by HOME in G:\Spring workspace 4.9\repo_bootjpa\bootjpa)
+2021-08-04 18:46:57.837  INFO 8376 --- [main] com.bootjpa.BootjpaApplication           : No active profile set, falling back to default profiles: default
+2021-08-04 18:46:58.612  INFO 8376 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-04 18:46:58.680  INFO 8376 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 55 ms. Found 1 JPA repository interfaces.
+2021-08-04 18:46:59.737  INFO 8376 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-08-04 18:46:59.761  INFO 8376 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-04 18:46:59.762  INFO 8376 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.50]
+2021-08-04 18:47:00.248  INFO 8376 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2021-08-04 18:47:00.259  INFO 8376 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-04 18:47:00.259  INFO 8376 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2362 ms
+2021-08-04 18:47:00.297  INFO 8376 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-08-04 18:47:00.535  INFO 8376 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-08-04 18:47:00.545  INFO 8376 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:userinfo'
+2021-08-04 18:47:00.772  INFO 8376 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-08-04 18:47:00.864  INFO 8376 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-08-04 18:47:01.186  INFO 8376 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-08-04 18:47:01.365  INFO 8376 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-08-04 18:47:02.160  INFO 8376 --- [main] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'file:/G:/Spring%20workspace%204.9/repo_bootjpa/bootjpa/target/classes/import.sql'
+2021-08-04 18:47:02.166  INFO 8376 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-04 18:47:02.184  INFO 8376 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-08-04 18:47:02.747  WARN 8376 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-08-04 18:47:03.315  INFO 8376 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-08-04 18:47:03.328  INFO 8376 --- [main] com.bootjpa.BootjpaApplication           : Started BootjpaApplication in 6.175 seconds (JVM running for 7.157)
+2021-08-04 18:48:23.567  INFO 8376 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-04 18:48:23.568  INFO 8376 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-04 18:48:23.571  INFO 8376 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-08-04 18:48:23.637  INFO 8376 --- [http-nio-8080-exec-1] com.bootjpa.controller.UserController    : Page loaded successfully
+2021-08-04 18:48:45.809 ERROR 8376 --- [http-nio-8080-exec-4] com.bootjpa.controller.UserController    : No such user exists with userid 101
+2021-08-04 18:51:15.194  INFO 8376 --- [http-nio-8080-exec-6] com.bootjpa.controller.UserController    : User [userid=101, name=Priya] was added in the Table User
+2021-08-04 18:51:25.817  INFO 8376 --- [http-nio-8080-exec-10] com.bootjpa.controller.UserController    : User [userid=102, name=Priya] was added in the Table User
+2021-08-04 18:51:42.494 ERROR 8376 --- [http-nio-8080-exec-3] com.bootjpa.controller.UserController    : No such user exists with userid 11
+2021-08-04 18:52:06.858  INFO 8376 --- [http-nio-8080-exec-7] com.bootjpa.controller.UserController    : User with userid 101 was deleted from Table User
+2021-08-04 18:52:26.761  INFO 8376 --- [RMI TCP Connection(8)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-08-04 18:52:31.605  INFO 8376 --- [RMI TCP Connection(8)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-08-04 18:52:31.878  INFO 8376 --- [RMI TCP Connection(8)-127.0.0.1] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2021-08-04 18:52:32.453  INFO 8376 --- [RMI TCP Connection(8)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-08-04 18:52:32.502  INFO 8376 --- [RMI TCP Connection(8)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
