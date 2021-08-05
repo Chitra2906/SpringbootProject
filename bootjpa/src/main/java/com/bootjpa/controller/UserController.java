@@ -4,6 +4,7 @@ import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -57,7 +58,8 @@ public class UserController {
 	@ResponseBody
 	public   JSONPObject showUser(@RequestParam int userid) {
 			logger.info("Fetching User details...");
-			Optional<User> user=repo.findById(userid);
+//			User user=repo.findById(userid).orElse(null);
+			User user=repo.findById(userid).orElseThrow(null);
 			logger.debug("showUser function returned " + user + "  as JSON Object");
 			logger.info("User data was fetched successfully");
 			return new JSONPObject("userobj", user);
@@ -74,6 +76,13 @@ public class UserController {
 		}
 		
 
+		@ExceptionHandler({NullPointerException.class , EmptyResultDataAccessException.class})
+		public String NoSuchUserExistsExceptionHandler(Exception e) {
+			logger.error("Error occurred :  " + e);
+			return "Error occurred : No such user exixts";
+			
+		}
+		
 		@ExceptionHandler(value = Exception.class)
 		public String exceptionHandler(Exception e) {
 			logger.error("Error occurred :  " + e);
