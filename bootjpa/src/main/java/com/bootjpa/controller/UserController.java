@@ -19,8 +19,7 @@ public class UserController {
 
 	private final Logger logger =LoggerFactory.getLogger(this.getClass());
 
-	@Autowired
-	UserRepo repo;
+
 	@Autowired
 	private CustomerService customerService;
 
