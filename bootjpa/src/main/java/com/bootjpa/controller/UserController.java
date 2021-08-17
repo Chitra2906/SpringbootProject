@@ -3,7 +3,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -23,7 +26,8 @@ public class UserController {
 	@Autowired
 	private CustomerService customerService;
 
-	@RequestMapping("/")
+//	@RequestMapping("/")
+	@GetMapping("/")
 	public String home() {
 		logger.info("Page loaded successfully");
 		return "Hello User";
@@ -31,7 +35,8 @@ public class UserController {
 	}
 
 	// How to test -->http://localhost:8080/addUser?userid=101&name=Priya
-	@RequestMapping("/addUser")
+//	@RequestMapping("/addUser")
+	@PostMapping("/addUser")
 	public String addUser(User user) {
 		logger.info("Making Service call to add User");
 		return customerService.addCustomer(user);
@@ -39,7 +44,8 @@ public class UserController {
 	}
 
 	// How to test ? --->	http://localhost:8080/showUser?userid=104
-	@RequestMapping("/showUser")
+//	@RequestMapping("/showUser")
+	@GetMapping("/showUser")
 	@ResponseBody
 	public   JSONPObject showUser(@RequestParam int userid) {
 		logger.info("Making service call to show User detail");
@@ -48,7 +54,8 @@ public class UserController {
 
 
 	//How to test ? --> http://localhost:8080/deleteUser?userid=101
-	@RequestMapping("/deleteUser")
+//	@RequestMapping("/deleteUser")
+	@DeleteMapping("/deleteUser")
 	public String deleteUser(@RequestParam int userid) {
 		logger.info("Making service call to delete user from the table...");
 		return customerService.deleteCustomer(userid);
