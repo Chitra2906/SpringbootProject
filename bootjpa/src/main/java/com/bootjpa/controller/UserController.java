@@ -61,19 +61,19 @@ public class UserController {
 		return customerService.deleteCustomer(userid);
 	}
 	
-	@ExceptionHandler({NullPointerException.class , EmptyResultDataAccessException.class})
-	public String NoSuchUserExistsExceptionHandler(Exception e) {
-		logger.error("Error occurred :  " + e);
-		return "Error occurred : No such user exists";
-		
-	}
-	
-	@ExceptionHandler(value = Exception.class)
-	public String exceptionHandler(Exception e) {
-		logger.error("Error occurred :  " + e);
-		return "Error occurred";
-		
-	}
+//	@ExceptionHandler({NullPointerException.class , EmptyResultDataAccessException.class})
+//	public String NoSuchUserExistsExceptionHandler(Exception e) {
+//		logger.error("Error occurred :  " + e);
+//		return "Error occurred : No such user exists";
+//		
+//	}
+//	
+//	@ExceptionHandler(value = Exception.class)
+//	public String exceptionHandler(Exception e) {
+//		logger.error("Error occurred :  " + e);
+//		return "Error occurred";
+//		
+//	}
 
 
 }
