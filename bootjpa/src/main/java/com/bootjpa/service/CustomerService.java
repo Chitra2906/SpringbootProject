@@ -26,14 +26,15 @@ public class CustomerService {
 		return user + " was added in the Table User";
 	}
 	
-	public   JSONPObject showCustomer(int userid) {
+	public   User showCustomer(int userid) {
 		logger.info("Entered showCustomer service method.....");
 		logger.info("Fetching User details...");
 		User user=repo.findById(userid).orElseThrow(null);
 		logger.debug("showUser function returned " + user + "  as JSON Object");
 		logger.info("User data was fetched successfully");
 		logger.info("Exiting method......");
-		return new JSONPObject("userobj", user);
+//		return new JSONPObject("userobj", user);
+		return user;
 }
 	
 	public String deleteCustomer(int userid) {
